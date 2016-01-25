@@ -1,0 +1,234 @@
+@font-face {
+	font-family: AvenirWeb_bold;
+	src: url("fonts/avenir-next-lt-pro/AvenirNextLTPro-Bold.otf") format("opentype");
+	/*src: url("fonts/avenir-next-lt-pro/AvenirNextLTPro-Demi.otf") format("opentype"); */
+}
+
+@font-face {
+	font-family: AvenirWeb_demi;
+	src: url("fonts/avenir-next-lt-pro/AvenirNextLTPro-Demi.otf") format("opentype"); 
+}
+
+@font-face {
+	font-family: AvenirWeb_regular;
+	src: url("fonts/avenir-next-lt-pro/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+
+html, body {
+	height: calc(100% - 46px);
+	background: #F5F5F5;
+}
+
+hr {
+	border-color: #F5F5F5;
+}
+
+h1 {
+	font-family: AvenirWeb_bold;
+}
+
+h2 {
+	font-family: AvenirWeb_demi;
+}
+
+h3 {
+	font-family: AvenirWeb_demi;
+	font-size: 40px;
+	letter-spacing: 2px;
+}
+
+h3 strong {
+	font-weight: 500;
+}
+
+p, button {
+	font-family: AvenirWeb_regular;
+}
+
+button {
+	color: #FFFFFF;
+	margin-bottom: 20px !important;
+}
+
+#map-container {
+	height: 100%;
+}
+
+#map { 
+	height: 100%;
+}
+
+#main-content {
+	height: 100%;
+	padding: 0px;
+}
+
+#left-sidebar {
+	border-right: 1px solid #CCCCCC;
+	max-height: 100%;
+	overflow: scroll;
+}
+
+#filters {
+	padding: 20px;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+#results {
+	background: #F5F5F5;
+	padding: 20px;
+}
+
+.hidden {
+	display: none;
+}
+
+.body {
+	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #565A5C;
+}
+
+.header-container {
+	border-bottom: 1px solid #CCCCCC;
+	padding: 10px;
+}
+
+.centered {
+	text-align: center;
+}
+
+.placeholder {
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 360px;
+	margin-top: 30px;
+	transition: background-color 0.3s ease;
+}
+.placeholder:hover {
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.placeholder:hover .catDescription {
+ 	display: inline-block;
+}
+
+.category {
+	color: #FFFFFF;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.catDescription {
+ 	display: none;
+ 	font-size: 20px;
+}
+
+.footer {
+	height: 200px;
+	background-color: #EEEEEE;
+}
+
+.page-header {
+	border-bottom: 0px;
+	margin-bottom: 25px;
+	margin-top: 25px;
+}
+
+
+.page-logo {
+	max-height: 70px;
+}
+
+.section-header {
+	margin: 50px 0px 30px 0px;
+}
+
+.section-header p{
+	font-size: 18px;
+}
+
+.jumbotron {
+	color: #FFFFFF;
+	text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background: url("assets/jumbotronBackground.jpg");
+	background-size: cover;
+	background-position: 0% 60%;
+}
+
+.jumbotron-container {
+	display: block;
+	position: relative;
+	color: #FFFFFF;
+	text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	background: url("assets/hiker.jpg");
+	background-size: cover;
+	background-position: 0% 40%;
+	height: 460px;
+	width: 100%;
+}
+
+.jumbotron-container h1 {
+	line-height: 135%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background: rgba(0, 0, 0, .4);
+	position: absolute;
+	height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 47px;
+}
+
+.section-header h1 {
+	color: #4A4A4A;
+	font-size: 47px;
+	font-family: AvenirWeb_demi;
+}
+
+.experiences {
+	margin-bottom: 0px;
+	margin-top: 100px;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	background: url("assets/biking.jpg");
+	background-size: cover;
+}
+
+.btn-filters {
+	background: #FF3036;
+	font-weight: bold;
+	width: 20%;
+}
+
+.btn-listings {
+	background: #FF3036;
+	font-weight: bold;
+	margin-top: 50px;
+	width: 20%;
+}
+
+.btn-listings:hover,
+.btn-filters:hover {
+	background: #FF595E;
+}
+
+.btn, .btn:hover {
+	color: #FFFFFF !important;
+	padding: 10px 20px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+	color: #FFFFFF;
+	background: #2B2D2E url("assets/footer-background.png");
+}
+
+.tour{	
+	color: #ffffff;
+}

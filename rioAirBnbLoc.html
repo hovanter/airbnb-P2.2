@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AirBnb Redesign</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="rioAirBnbLoc.css">
+  <link href="bower_components/featherlight/src/featherlight.css" type="text/css" rel="stylesheet" />
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head> 
+<body>
+  <div class="container">
+    <div class="col-md-12 page-header">
+      <img class="page-logo" src="assets/rio-logo.png" />
+      <img class="page-logo pull-right" src="assets/sponsor.png" />
+    </div>
+  </div>
+
+  <div class="jumbotron-container">
+    <h1 class="centered">Neighborhoods in Rio</h1>      
+  </div>
+
+  <div class="container">
+    <div class="section-header" id="explore">
+      <div class="row">
+        <h1 class="centered">Where do you want to go?</h1>
+        <p class="centered">Explore neighberhoods in Rio and find listings in your ideal location</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="background-img-wrapper" data-featherlight="#fl1" style="background-image: url('assets/copacabana.png'); background-size: cover;">
+          <div class="placeholder">
+            <div class="category">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="background-img-wrapper" data-featherlight="#fl1" style="background-image: url('assets/maracana.png'); background-size: cover;">
+          <div class="placeholder">
+            <div class="category">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="background-img-wrapper" data-featherlight="#fl1"  style="background-image: url('assets/tijuca.png'); background-size: cover;">
+          <div class="placeholder">
+            <div class="category">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="background-img-wrapper" data-featherlight="#fl1" style="height:50%; background-image: url('assets/ipanema.png'); background-size: cover;">
+          <div class="placeholder">
+            <div class="category">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="background-img-wrapper" data-featherlight="#fl1"  style="background-image: url('assets/leblon.png'); background-size: cover;">
+          <div class="placeholder">
+            <div class="category">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="background-img-wrapper" data-featherlight="#fl1"  style="background-image: url('assets/botafogo.png'); background-size: cover;">
+          <div class="placeholder">
+            <div class="category">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="background-img-wrapper" data-featherlight="#fl1" style="background-image: url('assets/flamengo.png'); background-size: cover;">
+          <div class="placeholder">
+            <div class="category">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="background-img-wrapper" data-featherlight="#fl1"  style="background-image: url('assets/lapa.png'); background-size: cover;">
+          <div class="placeholder">
+            <div class="category">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="background-img-wrapper" data-featherlight="#fl1"  style="background-image: url('assets/santa-teresa.png'); background-size: cover;">
+          <div class="placeholder">
+            <div class="category">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <a href="listingsMap.html" role="button" class="btn center-block btn-listings">View all Rio listings</a>
+    </div>
+
+    <div class="row"><p>&nbsp;</p></div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <hr class="col-md-10 col-md-offset-1" />
+      </div>
+      <div class="row">
+        <p class="text-center">© Airbnb, Inc. </p>
+      </div>
+    </div>
+  </footer>
+
+<div class="lightbox" id="fl1">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 location-header-height"> 
+        <h2>Copacabana</h2>
+        <p>Copacabana is situated by one of the best beaches in Rio. This densely populated residential city is known for its extragavent night clubs and myriad of restaurants of all price ranges. It's also a 5 minute bus ride from the main Olympic stadium and nearby smaller athletic events. But the fun doesnt stop there - you will also be able to enjoy x, y, and z...
+        </p>
+        <span>
+          <strong>Close to:</strong>
+          <img class="iconic-mart" src="assets/martini_pink.png" width/>
+          <img class="iconic-fork" src="assets/pink_fork.png" />
+          <img class="iconic-ring" src="assets/pink_rang.png" />
+          <!-- <img class="iconic-hike" src="assets/pink_hike.png" />  -->            
+        </span>
+      </div>
+      <div class="col-sm-8 blurb-img location-header-height">
+        <img src="assets/streets.jpg" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12"><h2>Featured Listings</h2></div>
+    </div>
+
+    <div class="row modal-listings">
+      <div class="col-sm-4">
+        <img class="modal-listing" src="assets/placeHolderListing.png" />
+      </div>
+      <div class="col-sm-4">
+        <img class="modal-listing" src = "assets/placeHolderListing.png" />
+      </div>
+      <div class="col-sm-4">
+        <img class="modal-listing" src = "assets/placeHolderListing.png" />
+      </div>
+    </div>
+
+    <div class="row">
+      <a href="listingsMap.html" role="button" class="btn center-block btn-listings">View all Rio listings</a>
+    </div>
+
+  </div>
+</div>
+  <script src="bower_components/featherlight/src/featherlight.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

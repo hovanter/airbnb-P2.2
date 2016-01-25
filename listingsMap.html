@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AirBnb Redesign</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="rioAirBnb.css">
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
+</head>
+<body>
+
+  <div class="container-fluid header-container">
+    <div class="col-md-12">
+      <img class="page-logo" src="assets/rio-logo.png" />
+      <img class="page-logo pull-right" src="assets/sponsor.png" />
+    </div> <!-- End page-header -->
+  </div> <!-- End container-fluid -->
+
+  <div id="main-content" class="container-fluid">
+    <div id="left-sidebar" class="col-sm-7">
+
+      <!-- Begin search filter section -->
+      <div id="filters" class="row">
+
+        <div class="row">
+          <div class="col-sm-3">Activities</div>
+          <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" id="olympic-events" value="">Olympic events</label></div>
+          <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" id="night-life" value="">Night life</label></div>
+          <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" id="family-fun" value="">Family fun</label></div>
+        </div> <!-- End row -->
+        <hr />
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" id="adventure" value="">Adventure</label></div>
+          <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" id="shopping" value="">Shopping</label></div>
+          <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" id="wine-and-dine" value="">Dining</label></div>
+        </div> <!-- End row -->
+        <script>
+          $("#family-fun").on("click", function (e) {
+            if ($("#family-fun").is(":checked")) {
+              map.addLayer(funLayer);
+            }
+            else {
+              map.removeLayer(funLayer);
+            }
+          })
+          $("#night-life").on("click", function (e) {
+            if ($("#night-life").is(":checked")) {
+              map.addLayer(nightLayer);
+            }
+            else {
+              map.removeLayer(nightLayer);
+            }
+          })
+          $("#olympic-events").on("click", function (e) {
+            if ($("#olympic-events").is(":checked")) {
+              map.addLayer(eventsLayer);
+            }
+            else {
+              map.removeLayer(eventsLayer);
+            }
+          })
+          $("#adventure").on("click", function (e) {
+            if ($("#adventure").is(":checked")) {
+              map.addLayer(adventureLayer);
+            }
+            else {
+              map.removeLayer(adventureLayer);
+            }
+          })
+          $("#wine-and-dine").on("click", function (e) {
+            if ($("#wine-and-dine").is(":checked")) {
+              map.addLayer(diningLayer);
+            }
+            else {
+              map.removeLayer(diningLayer);
+            }
+          })
+          $("#shopping").on("click", function (e) {
+            if ($("#shopping").is(":checked")) {
+              map.addLayer(shoppingLayer);
+            }
+            else {
+              map.removeLayer(shoppingLayer);
+            }
+          })
+        </script>
+        <hr />
+        <div class="row">
+          <div class="col-sm-3">Dates</div>
+          <div class="col-sm-3"><input type="text" class="form-control" value="" placeholder="Check-in"></div>
+          <div class="col-sm-3"><input type="text" class="form-control" value="" placeholder="Check-out"></div>
+          <div class="col-sm-3">
+            <select class="form-control" id="sel1">
+              <option>1 Guest</option>
+              <option>2 Guests</option>
+              <option>3 Guests</option>
+              <option>4+ Guests</option>
+            </select> <!-- End select drop down -->
+          </div>
+        </div> <!-- End row -->
+        <hr />
+        <div class="row">
+          <div class="col-sm-3">Room types</div>
+          <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">Entire home / apt</label></div>
+          <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">Private room</label></div>
+          <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">Shared room</label></div>
+        </div> <!-- End row -->
+        <hr />
+        <div class="row">
+          <div class="col-sm-3">Price range</div>
+          <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">$</label></div>
+          <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">$$</label></div>
+          <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">$$$</label></div>
+        </div> <!-- End row -->
+
+        <!-- More filters, these are hidden at first -->
+        <div id="more-filters" class="hidden">
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">Another filter</div>
+            <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">Option 1</label></div>
+            <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">Option 2</label></div>
+            <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">Option 3</label></div>
+          </div> <!-- End row -->
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">And another</div>
+            <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">Option 1</label></div>
+            <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">Option 2</label></div>
+            <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">Option 3</label></div>
+          </div> <!-- End row -->
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">You get the idea</div>
+            <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">Option 1</label></div>
+            <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">Option 2</label></div>
+            <div class="col-sm-3"><label class="checkbox-inline"><input type="checkbox" value="">Option 3</label></div>
+          </div> <!-- End row -->
+        </div>
+
+      </div> <!-- End row -->
+
+      <!-- Begin search results section -->
+      <div id="results" class="row">
+
+        <button id="more-filters-button" type="button" class="btn btn-filters">More filters</button>
+        <script>
+        $("#more-filters-button").on("click", function (e) {
+          if ($("#more-filters").hasClass("hidden")) {
+            $("#more-filters").removeClass("hidden");
+            $("#more-filters-button").text("Hide filters");
+          }
+          else {
+            $("#more-filters").addClass("hidden");
+            $("#more-filters-button").text("More filters");
+          }
+        })
+        </script>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <img width="100%" src="assets/placeHolderListing.png" />
+            <p><a>Apartment in Rio de Janeiro</a></p>
+            <p>Entire home x stars, 4 reviews</p>
+          </div>
+          <div class="col-sm-6"><img width="100%" src="assets/placeHolderListing.png" />
+            <p><a>Apartment in Rio de Janeiro</a></p>
+            <p>Entire home x stars, 4 reviews</p>
+          </div>
+        </div> <!-- End row -->
+
+        <div class="row">
+          <div class="col-sm-6"><img width="100%" src="assets/placeHolderListing.png" />
+            <p><a>Apartment in Rio de Janeiro</a></p>
+            <p>Entire home x stars, 4 reviews</p>
+          </div>
+          <div class="col-sm-6"><img width="100%" src="assets/placeHolderListing.png" />
+            <p><a>Apartment in Rio de Janeiro</a></p>
+            <p>Entire home x stars, 4 reviews</p>
+          </div>
+        </div> <!-- End row -->
+
+        <div class="row">
+          <div class="col-sm-6"><img width="100%" src="assets/placeHolderListing.png" />
+            <p><a>Apartment in Rio de Janeiro</a></p>
+            <p>Entire home x stars, 4 reviews</p>
+          </div>
+          <div class="col-sm-6"><img width="100%" src="assets/placeHolderListing.png" />
+            <p><a>Apartment in Rio de Janeiro</a></p>
+            <p>Entire home x stars, 4 reviews</p>
+          </div>
+        </div> <!-- End row -->
+
+        <!-- Begin paging for search results -->
+        <div class="row text-center">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+              </li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul> <!-- End pagination -->
+        </div> <!-- End row -->
+      </div> <!-- End results -->
+
+    </div> <!-- End left-sidebar -->
+    
+    <!-- Map -->
+    <div id="map-container">
+      <div id="map">
+      </div>
+    </div>
+    <script>
+    L.mapbox.accessToken = 'pk.eyJ1IjoiYmhuYXNjYXIiLCJhIjoiY2lqa3NzaTc3MDAwNHQ5a29ibXgxOWllbyJ9.PwtqGI5Rbwewn2sbw5cgVw';
+    map = L.mapbox.map('map', 'mapbox.streets', {
+        // the options here prevent mouse wheel or trackpad scrolling
+        // and restrict the zooms to zoom levels 14 through 18
+        scrollWheelZoom: false,
+        maxZoom: 14,
+        minZoom: 10
+    }).setView([-22.9481895,-43.1873461], 13);
+
+    /* Various layers */
+    funLayer = L.mapbox.featureLayer('bhnascar.opbomn72');
+    nightLayer = L.mapbox.featureLayer('bhnascar.opc2dkbl');
+    eventsLayer = L.mapbox.featureLayer('bhnascar.opc4278i');
+    adventureLayer = L.mapbox.featureLayer('bhnascar.opc5jo54');
+    diningLayer = L.mapbox.featureLayer('bhnascar.opc7bhl1');
+    shoppingLayer = L.mapbox.featureLayer('bhnascar.opjef4do');
+
+    /* Toggle selected layer, if any. */
+    if (window.location.hash == "#familyfun") {
+      $("#family-fun").click()
+    }
+    else if (window.location.hash == "#nightlife") {
+      $("#night-life").click()
+    }
+    else if (window.location.hash == "#dining") {
+      $("#wine-and-dine").click()
+    }
+    else if (window.location.hash == "#shopping") {
+      $("#shopping").click()
+    }
+    else if (window.location.hash == "#olympics") {
+      $("#olympic-events").click()
+    }
+    else if (window.location.hash == "#adventure") {
+      $("#adventure").click()
+    }
+
+
+    </script>
+
+  </div> <!-- End container-fluid -->
+
+</body> 
